@@ -6,7 +6,8 @@
   "description": "ProveItBro engine: exact odds, provably fair adapters, simulations (TZ 9.1).",
   "exports": {
     ".": "./src/index.ts",
-    "./plinko": "./src/games/plinko/index.ts"
+    "./plinko": "./src/games/plinko/index.ts",
+    "./sim": "./src/sim/index.ts"
   },
   "scripts": {
     "typecheck": "tsc -p tsconfig.json",
