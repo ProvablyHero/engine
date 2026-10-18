@@ -9,15 +9,15 @@ import { floats } from "../../core/floats.ts";
  *   move   = floor(float * 2): 0 left, 1 right; one float per row
  *   slot   = number of rights; multiplier = table[risk][rows][slot]
  *
- * Status: reference. It becomes verified once real disclosed rounds are
- * replayed here as test vectors (TZ 12.2).
+ * Status: verified. Real disclosed rounds (proveitbro-data,
+ * snapshots/bch-games/2026-10-18/rounds/) replay with this adapter (TZ 12.2).
  */
 export const BCH_GAMES_PLINKO_V1 = {
   id: "bch-games-plinko-v1",
   operator: "bch-games",
   game: "plinko",
   algorithmVersion: "v1",
-  status: "reference",
+  status: "verified",
 } as const;
 
 export async function bchGamesPlinkoPath(serverSeed: string, clientSeed: string, nonce: number, rows: number): Promise<{ path: (0 | 1)[]; slot: number }> {
