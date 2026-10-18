@@ -16,11 +16,15 @@ export function hitProbability(multipliers: readonly number[], threshold: number
 
 /** P(at least one hit in K drops) = 1 - (1 - p)^K. */
 export function atLeastOnce(p: number, drops: number): number {
-  return p >= 1 ? 1 : 1 - Math.exp(drops * Math.log1p(-p));
+  if (!Number.isFinite(p) || p < 0 || p > 1 || !Number.isSafeInteger(drops) || drops < 0) throw new RangeError("Invalid probability or drops");
+  if (drops === 0 || p === 0) return 0;
+  return p === 1 ? 1 : -Math.expm1(drops * Math.log1p(-p));
 }
 
 /** Drops needed for a `target` chance of at least one hit: ceil(ln(1 - q) / ln(1 - p)). */
 export function dropsFor(p: number, target: number): number {
+  if (!Number.isFinite(p) || p < 0 || p > 1 || !Number.isFinite(target) || target < 0 || target > 1) throw new RangeError("Invalid probability");
+  if (target === 0) return 0;
   if (p <= 0) return Infinity;
   if (p >= 1) return 1;
   return Math.ceil(Math.log1p(-target) / Math.log1p(-p));
@@ -35,9 +39,10 @@ export function normalCdf(z: number): number {
 
 /**
  * Bankroll after N drops of `bet`, normal approximation (TZ 9.5: shown with a
- * caveat and a link to the simulator for the exact answer).
+ * caveat and a link to the simulator for a Monte Carlo estimate).
  */
 export function bankrollOutlook(multipliers: readonly number[], bet: number, drops: number, rtpValue: number) {
+  if (!Number.isFinite(bet) || bet <= 0 || !Number.isSafeInteger(drops) || drops < 0 || !Number.isFinite(rtpValue) || rtpValue < 0) throw new RangeError("Invalid bankroll inputs");
   const sigma = stdDev(multipliers) * bet * Math.sqrt(drops);
   const expectedLoss = drops * bet * (1 - rtpValue);
   return {

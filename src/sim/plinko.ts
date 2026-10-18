@@ -60,7 +60,9 @@ function quantile(sorted: Float64Array | number[], q: number): number {
 
 export function simulate(config: SimConfig, onProgress?: (done: number) => void): SimResult {
   const { multipliers, bet, bankroll, dropsPerSession, sessions } = config;
+  if (!Number.isFinite(bet) || bet <= 0 || !Number.isFinite(bankroll) || bankroll <= 0 || !Number.isInteger(sessions) || sessions < 1 || sessions > 10000 || !Number.isInteger(dropsPerSession) || dropsPerSession < 1 || dropsPerSession > 1000000 || sessions * dropsPerSession > 50000000) throw new RangeError("Invalid simulation inputs");
   const rows = multipliers.length - 1;
+  if (rows < 1 || rows > 32 || multipliers.some(m => !Number.isFinite(m) || m < 0)) throw new RangeError("Invalid multiplier table");
   const mask = rows >= 32 ? 0xffffffff : (2 ** rows - 1) >>> 0;
   const rng = xoshiro128ss(`sim:${config.seed}`);
 
@@ -148,7 +150,9 @@ export function simulate(config: SimConfig, onProgress?: (done: number) => void)
 /** Observed RTP after 100, 1k, 10k, 100k and 1M drops of one long run. */
 export function convergence(multipliers: number[], seed: string, marks = [100, 1_000, 10_000, 100_000, 1_000_000]): Convergence {
   const rows = multipliers.length - 1;
+  if (rows < 1 || rows > 32 || multipliers.some(m => !Number.isFinite(m) || m < 0)) throw new RangeError("Invalid multiplier table");
   const mask = (2 ** rows - 1) >>> 0;
+  if (marks.some((m, i) => !Number.isSafeInteger(m) || m < 1 || m > 10000000 || (i > 0 && m <= marks[i - 1]))) throw new RangeError("Invalid convergence checkpoints");
   const rng = xoshiro128ss(`conv:${seed}`);
   const out: Convergence = [];
   let returned = 0;
