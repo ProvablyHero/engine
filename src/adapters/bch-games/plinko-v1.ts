@@ -21,6 +21,7 @@ export const BCH_GAMES_PLINKO_V1 = {
 } as const;
 
 export async function bchGamesPlinkoPath(serverSeed: string, clientSeed: string, nonce: number, rows: number): Promise<{ path: (0 | 1)[]; slot: number }> {
+  if (!Number.isInteger(rows) || rows < 8 || rows > 16) throw new RangeError("BCH.games rows must be 8 to 16");
   const path = (await floats(serverSeed, clientSeed, nonce, rows)).map((f) => Math.floor(f * 2) as 0 | 1);
   return { path, slot: path.reduce<number>((s, d) => s + d, 0) };
 }

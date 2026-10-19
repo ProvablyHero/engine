@@ -1,3 +1,4 @@
+import { assertSeed, INPUT } from "./input.ts";
 import { hmacSha256 } from "./crypto.ts";
 
 /**
@@ -7,7 +8,9 @@ import { hmacSha256 } from "./crypto.ts";
  * any count of floats is reproducible from the three inputs.
  */
 export async function floats(serverSeed: string, clientSeed: string, nonce: number, count: number): Promise<number[]> {
-  if (!Number.isSafeInteger(nonce) || nonce < 0 || !Number.isInteger(count) || count < 1 || count > 64 || serverSeed.length > 4096 || clientSeed.length > 4096) throw new RangeError("Invalid replay inputs");
+  if (!Number.isSafeInteger(nonce) || nonce < 0 || !Number.isInteger(count) || count < 1 || count > 64) throw new RangeError("Invalid replay inputs");
+  assertSeed(serverSeed, INPUT.serverSeed);
+  assertSeed(clientSeed);
   const needed = count * 4;
   const bytes: number[] = [];
   for (let round = 0; bytes.length < needed; round++) {

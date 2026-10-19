@@ -7,12 +7,15 @@
   "exports": {
     ".": "./src/index.ts",
     "./plinko": "./src/games/plinko/index.ts",
-    "./sim": "./src/sim/index.ts"
+    "./sim": "./src/sim/index.ts",
+    "./input": "./src/core/input.ts"
   },
   "scripts": {
     "typecheck": "tsc -p tsconfig.json",
     "test:unit": "node --test 'src/**/*.test.ts'",
-    "test": "npm run typecheck && npm run test:unit"
+    "test": "npm run typecheck && npm run test:unit",
+    "security:check": "node scripts/security-check.mjs",
+    "security:audit": "npm audit --package-lock-only --audit-level=high"
   },
   "devDependencies": {
     "@types/node": "^26.0.0",
