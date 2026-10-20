@@ -32,3 +32,16 @@ test("Stake rejects invalid replay inputs", async () => {
   for (const nonce of [-1, 0.5, NaN, Number.MAX_SAFE_INTEGER + 1]) await assert.rejects(stakePlinkoPath("s", "c", nonce, 8), RangeError);
   await assert.rejects(stakePlinkoPath("", "c", 0, 8), RangeError);
 });
+
+
+test("Stake replays three community-reported historical paths without promoting reference status", async () => {
+  const historical = JSON.parse(readFileSync(new URL("../../../test-vectors/stake-plinko-v1-historical.json", import.meta.url), "utf8"));
+  assert.equal(STAKE_PLINKO_V1.status, "reference");
+  assert.equal(historical.kind, "historical-community-rounds");
+  assert.equal(historical.vectors.length, 3);
+  for (const v of historical.vectors) {
+    // No commitment is invented from a hash calculated after disclosure.
+    assert.equal(v.recordedCommitment, null);
+    assert.deepEqual(await stakePlinkoPath(v.serverSeed, v.clientSeed, v.nonce, v.rows), { path: v.path, slot: v.slot });
+  }
+});

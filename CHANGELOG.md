@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Add three community-reported Stake Plinko paths from 2018 as historical regression vectors. No recorded pre-bet commitments are available; Stake remains reference. Runtime algorithms and engine version are unchanged.
+
 ## [0.2.0] - 2026-10-20
 
 ### Added

@@ -33,7 +33,7 @@ const result = await stakePlinkoPath(bet.serverSeed, bet.clientSeed, bet.nonce, 
 console.log({ matches: result.slot === bet.slot, slot: result.slot, path: result.path });
 ```
 
-Stake support is `reference`: it implements the published scheme but this release has no independently captured Stake rounds. For an actual disclosed-round example, run `node examples/verify-bch-games.ts`.
+Stake support is `reference`: it implements the published scheme but we have no independently captured Stake rounds with recorded commitments. For an actual disclosed-round example, run `node examples/verify-bch-games.ts`.
 
 A matching path/slot and server-seed commitment are specific checks. They do not prove operator solvency, withdrawals, every aspect of fairness or that a particular multiplier table was in use. The returned slot is **zero-based**; `0` means left and `1` means right in a path. This package does not supply operator payout tables or compare the payout of a bet.
 
@@ -44,7 +44,7 @@ Seeds are used verbatim as UTF-8 strings, not hex-decoded or trimmed. Current in
 | Operator / game | Adapter | Status | Evidence in this repository |
 | --- | --- | --- | --- |
 | BCH.games Plinko, 8–16 rows | `bch-games-plinko-v1` | **verified** | Eight disclosed rounds; commitment, full-path and slot checks |
-| Stake Plinko, 8–16 rows | `stake-plinko-v1` | **reference** | Official scheme, four fixed synthetic vectors and an independent Node crypto oracle |
+| Stake Plinko, 8–16 rows | `stake-plinko-v1` | **reference** | Official scheme, four synthetic vectors, three community-reported historical paths (2018), independent Node crypto oracle |
 
 `verified` means replay agreement with the captured disclosed rounds for the named adapter version. `reference` means an implementation of the documented algorithm without those independent real-round checks. Neither is a casino endorsement or a claim about future wins. Operator status on the website also depends on its separately reviewed data; adding an engine adapter does not automatically list an operator there.
 
@@ -74,7 +74,7 @@ npm run security:history # scan fetched Git history and staged files
 npm run security:audit  # lockfile dependency audit; needs network access
 ```
 
-[Vector provenance and contribution rules](test-vectors/README.md) distinguish eight BCH.games disclosed rounds from synthetic Stake fixtures. Tests run without fetching operator sites or the separate data repository. CI runs tests on Node 22.18, 24 and 26 with read-only repository permissions; the security workflow also runs weekly.
+[Vector provenance and contribution rules](test-vectors/README.md) distinguish eight BCH.games disclosed rounds, synthetic Stake fixtures and historical community examples without recorded commitments. Tests run without fetching operator sites or the separate data repository. CI runs tests on Node 22.18, 24 and 26 with read-only repository permissions; the security workflow also runs weekly.
 
 ## Versions and layout
 

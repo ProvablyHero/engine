@@ -3,7 +3,7 @@ import { floats } from "../../core/floats.ts";
 /**
  * Original implementation of Stake's documented Plinko mapping, checked 2026-10-19.
  * Sources: https://stake.com/provably-fair/implementation and /game-events.
- * Reference only: no disclosed Stake rounds are included in this release.
+ * Reference only: historical community examples lack recorded pre-bet commitments.
  * Payout tables are separate data; this adapter replays the path and slot only.
  */
 export const STAKE_PLINKO_V1 = {

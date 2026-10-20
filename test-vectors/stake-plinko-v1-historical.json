@@ -1,0 +1,85 @@
+{
+  "adapter": "stake-plinko-v1",
+  "kind": "historical-community-rounds",
+  "sourceUrl": "https://stakecommunity.com/topic/14119-how-the-ball-path-in-plinko-verification-work/",
+  "publishedAt": "2018-10-09",
+  "checkedAt": "2026-10-20",
+  "limitations": [
+    "User-reported rounds, not independently captured by ProveItBro.",
+    "No pre-bet server seed commitment is available; commitment verification is not possible.",
+    "Only paths and slots are regression-tested; payouts and current Stake behavior are not verified."
+  ],
+  "vectors": [
+    {
+      "betId": "1000385754",
+      "serverSeed": "910af731f943e44fa03584d7e760fd1a8cc8d075befd69249e2801a27187ddd9",
+      "clientSeed": "Boobs",
+      "nonce": 1,
+      "rows": 8,
+      "risk": "medium",
+      "path": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "slot": 4,
+      "recordedCommitment": null
+    },
+    {
+      "betId": "1000386876",
+      "serverSeed": "910af731f943e44fa03584d7e760fd1a8cc8d075befd69249e2801a27187ddd9",
+      "clientSeed": "Boobs",
+      "nonce": 2,
+      "rows": 11,
+      "risk": "high",
+      "path": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "slot": 4,
+      "recordedCommitment": null
+    },
+    {
+      "betId": "1000387743",
+      "serverSeed": "910af731f943e44fa03584d7e760fd1a8cc8d075befd69249e2801a27187ddd9",
+      "clientSeed": "Boobs",
+      "nonce": 3,
+      "rows": 16,
+      "risk": "low",
+      "path": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "slot": 7,
+      "recordedCommitment": null
+    }
+  ]
+}
