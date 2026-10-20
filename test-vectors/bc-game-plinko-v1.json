@@ -1,0 +1,148 @@
+{
+  "adapter": "bc-game-plinko-v1",
+  "kind": "captured-outcomes-with-supplied-revealed-seed",
+  "capturedAt": "2026-10-20",
+  "recordedCommitment": null,
+  "serverSeed": "735a746dbb1c469872c68f07de20e67d1c06df66a340034341643a2cb35a55e0",
+  "suppliedServerSeedHash": "7f938ca7f5477925ea0492b1c926f086ca79dfcf4bb5c4578c08aeaad6c13cbf",
+  "clientSeed": "ptp614c2kpk3e6GCwhPX",
+  "provenance": "Paths, rows, Classic mode, High risk and multipliers transcribed from six matched request/response pairs in a supplied BC.Game browser HAR. Revealed seed and its matching hash supplied separately after play. No pre-bet commitment captured. No account/session records included.",
+  "vectors": [
+    {
+      "nonce": 28,
+      "rows": 16,
+      "risk": "high",
+      "mode": "classic",
+      "path": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "slot": 8,
+      "multiplier": 0.1
+    },
+    {
+      "nonce": 29,
+      "rows": 16,
+      "risk": "high",
+      "mode": "classic",
+      "path": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "slot": 9,
+      "multiplier": 0.2
+    },
+    {
+      "nonce": 30,
+      "rows": 11,
+      "risk": "high",
+      "mode": "classic",
+      "path": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "slot": 9,
+      "multiplier": 5.0
+    },
+    {
+      "nonce": 31,
+      "rows": 11,
+      "risk": "high",
+      "mode": "classic",
+      "path": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "slot": 6,
+      "multiplier": 0.2
+    },
+    {
+      "nonce": 32,
+      "rows": 11,
+      "risk": "high",
+      "mode": "classic",
+      "path": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "slot": 8,
+      "multiplier": 1.5
+    },
+    {
+      "nonce": 33,
+      "rows": 11,
+      "risk": "high",
+      "mode": "classic",
+      "path": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "slot": 5,
+      "multiplier": 0.2
+    }
+  ]
+}

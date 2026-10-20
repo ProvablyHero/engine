@@ -15,6 +15,11 @@ export async function hmacSha256(key: string, message: string): Promise<Uint8Arr
   return new Uint8Array(await crypto.subtle.sign("HMAC", k, encoder.encode(message)));
 }
 
+export async function hmacSha512(key: string, message: string): Promise<Uint8Array> {
+  const k = await crypto.subtle.importKey("raw", encoder.encode(key), { name: "HMAC", hash: "SHA-512" }, false, ["sign"]);
+  return new Uint8Array(await crypto.subtle.sign("HMAC", k, encoder.encode(message)));
+}
+
 /** A random seed: 32 bytes as 64 hex characters, from the platform CSPRNG. */
 export function randomSeed(): string {
   return toHex(crypto.getRandomValues(new Uint8Array(32)));

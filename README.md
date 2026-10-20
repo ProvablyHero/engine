@@ -44,11 +44,14 @@ Seeds are used verbatim as UTF-8 strings, not hex-decoded or trimmed. Current in
 | Operator / game | Adapter | Status | Evidence in this repository |
 | --- | --- | --- | --- |
 | BCH.games Plinko, 8–16 rows | `bch-games-plinko-v1` | **verified** | Eight disclosed rounds; commitment, full-path and slot checks |
+| BC.Game Classic Plinko, 8–16 rows | `bc-game-plinko-v1` | **verified** | Four disclosed Classic rounds with a recorded pre-bet hash, full paths and slots; seven additional replays |
 | Stake Plinko, 8–16 rows | `stake-plinko-v1` | **reference** | Official scheme, four synthetic vectors, three community-reported historical paths (2018), independent Node crypto oracle |
 
 `verified` means replay agreement with the captured disclosed rounds for the named adapter version. `reference` means an implementation of the documented algorithm without those independent real-round checks. Neither is a casino endorsement or a claim about future wins. Operator status on the website also depends on its separately reviewed data; adding an engine adapter does not automatically list an operator there.
 
-Sources: [Stake implementation](https://stake.com/provably-fair/implementation), [float conversion](https://stake.com/provably-fair/conversions), [Plinko mapping](https://stake.com/provably-fair/game-events), [BCH.games](https://bch.games) and the ProveItBro capture notes described in [vector provenance](test-vectors/README.md).
+BC.Game supports normal **Classic** mode only; Lightning and Left/Right side bias are excluded. Its official verifier consumes four-byte fractions from one HMAC-SHA512 block for `clientSeed:nonce`, using a strict `> 0.5` right-turn threshold.
+
+Sources: [BC.Game verifier](https://github.com/bcgame-project/verify/blob/main/plinko.html), [Stake implementation](https://stake.com/provably-fair/implementation), [float conversion](https://stake.com/provably-fair/conversions), [Plinko mapping](https://stake.com/provably-fair/game-events), [BCH.games](https://bch.games) and the ProveItBro capture notes described in [vector provenance](test-vectors/README.md).
 
 ## Exact mathematics and session estimates
 

@@ -37,3 +37,19 @@ These are historical community reports, not rounds captured by ProveItBro. No pr
 6. Add a fixture and a regression test. Include both an eight-row case and a longer case when the algorithm crosses a hash-block boundary.
 
 A source-code comparison or synthetic vector alone is enough for `reference`, never for `verified`. Use Issues for public, already revealed reproducible examples. See [SECURITY.md](../SECURITY.md) for sensitive reports.
+
+## BC.Game: captured outcomes, commitment not recorded
+
+`bc-game-plinko-v1.json` contains six Classic/High outcomes from a user-supplied HAR recorded on 2026-10-20 (nonces 28–33, 11/16 rows). Expected full paths, slots and multipliers come from captured game responses, not our adapter. Seeds were supplied separately after play; their SHA-256 matches the supplied hash, but that hash does not occur in the capture before play, so `recordedCommitment` is null and status stays reference. No account IDs, balances, bet amounts, cookies, session tokens or raw HAR are included.
+
+The official source is https://github.com/bcgame-project/verify/blob/main/plinko.html. HMAC-SHA512 uses the UTF-8 server seed as key and `clientSeed:nonce` as message. Four-byte big-endian fractions give one direction each; strictly greater than 0.5 is right. Only Classic normal mode is supported. Captured payout checks live in the separately versioned data repository; engine tests check paths and slots.
+
+### Separate before/after disclosure evidence
+
+`bc-game-plinko-v1-disclosure.json` adds a seventh captured outcome from a different seed pair: nonce 2, 13 rows, High/Classic, path `1100010000000`, slot 3, x4. An API response at 2026-10-20T12:14:43.939Z contains the hash and client seed while the server seed field is empty. At 12:16:44.368Z the same bet response contains the revealed seed, which hashes to the previously captured value. The bet timestamp is 12:14:32.304Z: the hash capture is after the bet, before disclosure. This distinction is recorded explicitly (`recordedBeforeBet: false`); it is not promoted to a pre-bet commitment. The user supplied screenshots corroborating both stages, but they contain account details and are not copied into this public repository. Expected path/slot/multiplier are transcribed from the operator responses, not derived with our adapter.
+
+### Verified Classic rounds with pre-bet commitment
+
+`bc-game-plinko-v1-verified.json` supplies the independent evidence for BC.Game Classic Verified status. On 2026-10-20 the `/g/p/98` `seed-next-hash` response recorded the **complete** current server hash, client seed and nonce 0 at 12:25:03.474Z. This precedes all four captured bet requests and server bet timestamps (first bet: 12:25:24Z). Four 12-row Regular/Classic round responses at nonces 0–3 supply the full paths and positions, with x1, x1.4, x1 and x1 payouts. After seed rotation, a bet-detail API response at 12:26:10.396Z supplies the revealed old seed; SHA-256 matches the previously recorded hash. UTC times come from the HAR frames/responses. The screenshots independently show nonce 0 before play and the nonce-1 outcome before/after disclosure; originals contain account information and are not redistributed.
+
+The adapter now has 11 replayed outcomes in total. Only these four have the complete recorded pre-bet commitment chain. The earlier six and the separate x4 disclosure fixture retain their original, weaker evidence labels; they are not retroactively treated as pre-bet commitments. Verified applies to this Classic replay adapter and captured scope, not real-money settlement, all risks/row counts as independently observed outcomes, other modes or the casino as a whole.

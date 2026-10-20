@@ -1,0 +1,131 @@
+{
+  "adapter": "bc-game-plinko-v1",
+  "kind": "disclosed-rounds-with-pre-bet-commitment",
+  "capturedAt": "2026-10-20",
+  "serverSeed": "9d85d0154a27ccea05118d92483693c6d74de8c2faed3c9441e1e5bb2904c925",
+  "serverSeedHash": "90e065bcd6854ce5c131ad3737723e511ce5583eb627ce07fa80a19ffd82a01e",
+  "clientSeed": "A5Ef5c8QN1cK3ct40dQQcasNCHhCbQ",
+  "commitment": {
+    "capturedAt": "2026-10-20T12:25:03.474Z",
+    "serverSeedHash": "90e065bcd6854ce5c131ad3737723e511ce5583eb627ce07fa80a19ffd82a01e",
+    "clientSeed": "A5Ef5c8QN1cK3ct40dQQcasNCHhCbQ",
+    "nonce": 0,
+    "source": "BC.Game /g/p/98 seed-next-hash response recorded before the first captured bet",
+    "frameSha256": "17e3ec46d04c7ad664e29876096504deb387c27f78f904d6ccb51d2d77ff04e1"
+  },
+  "disclosure": {
+    "capturedAt": "2026-10-20T12:26:10.396Z",
+    "serverSeed": "9d85d0154a27ccea05118d92483693c6d74de8c2faed3c9441e1e5bb2904c925",
+    "serverSeedHash": "90e065bcd6854ce5c131ad3737723e511ce5583eb627ce07fa80a19ffd82a01e",
+    "clientSeed": "A5Ef5c8QN1cK3ct40dQQcasNCHhCbQ",
+    "source": "Bet-details API after seed rotation",
+    "responseSha256": "6ba781f777b1c6a9ca7357d0fb2e280b24af3e4b71815ebe50bf6fc3f0e046a1"
+  },
+  "provenance": "Four captured request/response pairs: 12 rows, Regular, Classic, nonces 0\u20133. Full hash and client seed captured by WebSocket before play; same seed pair disclosed after rotation. User screenshots corroborate nonce 0 before play and nonce 1 payout before/after disclosure. Only allowlisted mathematical fields, timestamps and response digests; no account IDs, names, balances, bet amounts, tokens, cookies, raw HAR or original screenshots.",
+  "vectors": [
+    {
+      "nonce": 0,
+      "rows": 12,
+      "risk": "regular",
+      "mode": "classic",
+      "path": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "slot": 5,
+      "multiplier": 1.0,
+      "betAt": "2026-10-20T12:25:27.798Z",
+      "requestedAt": "2026-10-20T12:25:23.790Z",
+      "responseAt": "2026-10-20T12:25:24.384Z",
+      "responseSha256": "0c45849bf731d3b83bae69752d531af87202a2abd7dbbf528a9fdb918279048e"
+    },
+    {
+      "nonce": 1,
+      "rows": 12,
+      "risk": "regular",
+      "mode": "classic",
+      "path": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "slot": 3,
+      "multiplier": 1.4,
+      "betAt": "2026-10-20T12:25:31.933Z",
+      "requestedAt": "2026-10-20T12:25:27.933Z",
+      "responseAt": "2026-10-20T12:25:32.166Z",
+      "responseSha256": "2f30c8b54588e8e2ddc15b3098a371103afcfb576040ff7b7bcda707778ce3e7"
+    },
+    {
+      "nonce": 2,
+      "rows": 12,
+      "risk": "regular",
+      "mode": "classic",
+      "path": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "slot": 7,
+      "multiplier": 1.0,
+      "betAt": "2026-10-20T12:25:34.010Z",
+      "requestedAt": "2026-10-20T12:25:29.675Z",
+      "responseAt": "2026-10-20T12:25:32.436Z",
+      "responseSha256": "581445846e0e4767bda4b37fa371b7bb187cfb8196f9726d11f3380c6fa829d4"
+    },
+    {
+      "nonce": 3,
+      "rows": 12,
+      "risk": "regular",
+      "mode": "classic",
+      "path": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "slot": 5,
+      "multiplier": 1.0,
+      "betAt": "2026-10-20T12:25:35.422Z",
+      "requestedAt": "2026-10-20T12:25:31.418Z",
+      "responseAt": "2026-10-20T12:25:32.448Z",
+      "responseSha256": "128fb87b02a1aa692191dcc4fec6d2a46f061e1598ff48dd1705124d5c199232"
+    }
+  ]
+}

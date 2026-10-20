@@ -1,0 +1,46 @@
+{
+  "adapter": "bc-game-plinko-v1",
+  "kind": "captured-before-and-after-disclosure",
+  "capturedAt": "2026-10-20",
+  "commitmentTiming": "after-bet-before-disclosure",
+  "recordedBeforeBet": false,
+  "provenance": "Allowlisted fields from two responses for the same bet in a user-supplied browser HAR. Account IDs, names, bet amounts, balances, cookies and tokens excluded. Screenshots supplied by user corroborate the same seed pair and x4 result; original images are not redistributed.",
+  "beforeDisclosure": {
+    "capturedAt": "2026-10-20T12:14:43.939Z",
+    "serverSeedHash": "7569bdf2ac12a7362153da3292a7be4176cac523da785e9eefe33da819aa8026",
+    "clientSeed": "ykjcFH8eas0rEexD",
+    "serverSeedRevealed": false,
+    "responseSha256": "26b11fe4e320d28e7162833ccc1dd5e9856cd672ec5f5c0ff3ba7fde7e92bff8"
+  },
+  "afterDisclosure": {
+    "capturedAt": "2026-10-20T12:16:44.368Z",
+    "serverSeed": "087c0bfb322deda8b016eb635573e4a69cee5b0ab00ae74dc07f3e45fde23519",
+    "serverSeedHash": "7569bdf2ac12a7362153da3292a7be4176cac523da785e9eefe33da819aa8026",
+    "clientSeed": "ykjcFH8eas0rEexD",
+    "responseSha256": "c3aafd083fa46feec4522e5b2c1ba2f4791b825b2b116be1844d46ee31cd24eb"
+  },
+  "vector": {
+    "nonce": 2,
+    "rows": 13,
+    "risk": "high",
+    "mode": "classic",
+    "path": [
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "slot": 3,
+    "multiplier": 4.0,
+    "betAt": "2026-10-20T12:14:32.304Z"
+  }
+}

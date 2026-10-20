@@ -1,8 +1,12 @@
 # Changelog
 
-## Unreleased
+## [0.3.0] - 2026-10-20
 
-- Add three community-reported Stake Plinko paths from 2018 as historical regression vectors. No recorded pre-bet commitments are available; Stake remains reference. Runtime algorithms and engine version are unchanged.
+- Add BC.Game Classic Plinko HMAC-SHA512 adapter with four captured pre-bet-committed Classic rounds (nonces 0–3) and seven additional outcome vectors with separately documented weaker provenance. Full paths and slots match; status is verified for Classic. Lightning and Left/Right bias are unsupported.
+- Add browser-compatible HMAC-SHA512.
+
+
+- Add three community-reported Stake Plinko paths from 2018 as historical regression vectors. No recorded pre-bet commitments are available; Stake remains reference; those historical vectors do not change the Stake replay algorithm.
 
 ## [0.2.0] - 2026-10-20
 
