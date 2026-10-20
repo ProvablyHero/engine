@@ -1,0 +1,96 @@
+{
+  "adapter": "stake-plinko-v1",
+  "kind": "synthetic-reference",
+  "sourceUrls": [
+    "https://stake.com/provably-fair/implementation",
+    "https://stake.com/provably-fair/game-events"
+  ],
+  "checkedAt": "2026-10-19",
+  "vectors": [
+    {
+      "serverSeed": "synthetic-stake-reference-server",
+      "serverSeedHash": "7d532db31f6bc2455e8f4cbfd5e13954784391eef240c9575aaf33997e115267",
+      "clientSeed": "synthetic-reference-client",
+      "nonce": 0,
+      "rows": 8,
+      "path": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "slot": 2
+    },
+    {
+      "serverSeed": "synthetic-stake-reference-server",
+      "serverSeedHash": "7d532db31f6bc2455e8f4cbfd5e13954784391eef240c9575aaf33997e115267",
+      "clientSeed": "synthetic-reference-client",
+      "nonce": 1,
+      "rows": 9,
+      "path": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "slot": 5
+    },
+    {
+      "serverSeed": "synthetic-stake-reference-server",
+      "serverSeedHash": "7d532db31f6bc2455e8f4cbfd5e13954784391eef240c9575aaf33997e115267",
+      "clientSeed": "synthetic-reference-client",
+      "nonce": 2,
+      "rows": 12,
+      "path": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "slot": 5
+    },
+    {
+      "serverSeed": "synthetic-stake-reference-server",
+      "serverSeedHash": "7d532db31f6bc2455e8f4cbfd5e13954784391eef240c9575aaf33997e115267",
+      "clientSeed": "synthetic-reference-client",
+      "nonce": 17,
+      "rows": 16,
+      "path": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "slot": 7
+    }
+  ]
+}

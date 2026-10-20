@@ -1,0 +1,189 @@
+{
+  "adapter": "bch-games-plinko-v1",
+  "kind": "disclosed-rounds",
+  "capturedAt": "2026-10-18",
+  "provenance": "ProveItBro account; commitments recorded before play; seeds disclosed after rotation. See test-vectors/README.md.",
+  "vectors": [
+    {
+      "serverSeed": "3ae1ba166e436cbcbee50b0d57a7bb1f2c9e74d2c509e602a6132ef8ddff8f63",
+      "serverSeedHash": "f929408aa092415149925b95bbd3bc9eeb1d85546b26bac67ff26a2a19f72ec7",
+      "clientSeed": "Lhhqh7pC1tJ7oKKP",
+      "nonce": 2,
+      "rows": 8,
+      "slot": 1,
+      "path": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "gameId": "11787321445"
+    },
+    {
+      "serverSeed": "57d4fb30e116d05d0899fad598616f01a76743c2ca9b280140c5c72d9fbd3566",
+      "serverSeedHash": "fe75c3ca773957b0b432593142c8747b0669bab29728e14b94df14906ddca4d8",
+      "clientSeed": "Lhhqh7pC1tJ7oKKP",
+      "nonce": 0,
+      "rows": 12,
+      "slot": 6,
+      "path": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "serverSeed": "57d4fb30e116d05d0899fad598616f01a76743c2ca9b280140c5c72d9fbd3566",
+      "serverSeedHash": "fe75c3ca773957b0b432593142c8747b0669bab29728e14b94df14906ddca4d8",
+      "clientSeed": "Lhhqh7pC1tJ7oKKP",
+      "nonce": 1,
+      "rows": 12,
+      "slot": 6,
+      "path": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "serverSeed": "57d4fb30e116d05d0899fad598616f01a76743c2ca9b280140c5c72d9fbd3566",
+      "serverSeedHash": "fe75c3ca773957b0b432593142c8747b0669bab29728e14b94df14906ddca4d8",
+      "clientSeed": "Lhhqh7pC1tJ7oKKP",
+      "nonce": 2,
+      "rows": 12,
+      "slot": 8,
+      "path": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "serverSeed": "57d4fb30e116d05d0899fad598616f01a76743c2ca9b280140c5c72d9fbd3566",
+      "serverSeedHash": "fe75c3ca773957b0b432593142c8747b0669bab29728e14b94df14906ddca4d8",
+      "clientSeed": "Lhhqh7pC1tJ7oKKP",
+      "nonce": 3,
+      "rows": 16,
+      "slot": 6,
+      "path": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "serverSeed": "57d4fb30e116d05d0899fad598616f01a76743c2ca9b280140c5c72d9fbd3566",
+      "serverSeedHash": "fe75c3ca773957b0b432593142c8747b0669bab29728e14b94df14906ddca4d8",
+      "clientSeed": "Lhhqh7pC1tJ7oKKP",
+      "nonce": 4,
+      "rows": 16,
+      "slot": 12,
+      "path": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "serverSeed": "57d4fb30e116d05d0899fad598616f01a76743c2ca9b280140c5c72d9fbd3566",
+      "serverSeedHash": "fe75c3ca773957b0b432593142c8747b0669bab29728e14b94df14906ddca4d8",
+      "clientSeed": "Lhhqh7pC1tJ7oKKP",
+      "nonce": 5,
+      "rows": 16,
+      "slot": 8,
+      "path": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "serverSeed": "57d4fb30e116d05d0899fad598616f01a76743c2ca9b280140c5c72d9fbd3566",
+      "serverSeedHash": "fe75c3ca773957b0b432593142c8747b0669bab29728e14b94df14906ddca4d8",
+      "clientSeed": "Lhhqh7pC1tJ7oKKP",
+      "nonce": 6,
+      "rows": 8,
+      "slot": 4,
+      "path": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 {
   "name": "@proveitbro/engine",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
-  "description": "ProveItBro engine: exact odds, provably fair adapters, simulations (TZ 9.1).",
+  "description": "Browser-first Plinko mathematics, provably fair replay adapters and deterministic session simulations.",
   "exports": {
     ".": "./src/index.ts",
     "./plinko": "./src/games/plinko/index.ts",
@@ -13,12 +13,27 @@
   "scripts": {
     "typecheck": "tsc -p tsconfig.json",
     "test:unit": "node --test 'src/**/*.test.ts'",
-    "test": "npm run typecheck && npm run test:unit",
+    "test": "npm run typecheck && npm run test:unit && npm run test:release && npm run test:examples",
     "security:check": "node scripts/security-check.mjs",
-    "security:audit": "npm audit --package-lock-only --audit-level=high"
+    "security:audit": "npm audit --package-lock-only --audit-level=high",
+    "test:release": "node scripts/check-release.mjs",
+    "test:examples": "node examples/verify-stake.ts && node examples/verify-bch-games.ts",
+    "security:history": "node scripts/check-history.mjs"
   },
   "devDependencies": {
     "@types/node": "^26.0.0",
     "typescript": "^6.0.3"
+  },
+  "license": "MIT",
+  "homepage": "https://proveitbro.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProveItBro/engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ProveItBro/engine/issues"
+  },
+  "engines": {
+    "node": ">=22.18.0"
   }
 }

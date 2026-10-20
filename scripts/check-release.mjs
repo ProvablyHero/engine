@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { ENGINE_VERSION } from '../src/core/version.ts';
+const pkg=JSON.parse(readFileSync(new URL('../package.json',import.meta.url),'utf8'));
+const lock=JSON.parse(readFileSync(new URL('../package-lock.json',import.meta.url),'utf8'));
+assert.equal(ENGINE_VERSION,pkg.version,'website engine version must match package version');
+assert.equal(lock.version,pkg.version);
+assert.equal(lock.packages[''].version,pkg.version);
+const changelog=readFileSync(new URL('../CHANGELOG.md',import.meta.url),'utf8');
+assert.ok(changelog.includes(`## [${pkg.version}]`),'every version needs a changelog entry');
+const example=readFileSync(new URL('../examples/verify-stake.ts',import.meta.url),'utf8').split('\n').slice(0,5).join('\n');
+assert.ok(readFileSync(new URL('../README.md',import.meta.url),'utf8').includes(example),'README example must match the executed example');
+const tag=process.env.GITHUB_REF_TYPE==='tag'?process.env.GITHUB_REF_NAME:null;
+if(tag)assert.equal(tag,`v${pkg.version}`,'release tag must match package and displayed version');
+console.log(`Release metadata consistent: v${pkg.version}`);
