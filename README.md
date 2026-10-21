@@ -1,8 +1,8 @@
 # ProveItBro Engine
 
-**Replay a revealed Plinko bet and check the mathematics behind it.** Pure TypeScript for browser-side odds, RTP, bankroll simulations and versioned provably fair adapters, used by [ProveItBro](https://proveitbro.com).
+**Replay a revealed Plinko bet and check the mathematics behind it.** Pure TypeScript for browser-side odds, RTP, bankroll simulations and versioned provably fair adapters, used by [ProvablyHero](https://provablyhero.com).
 
-[Try the tools](https://proveitbro.com/plinko) · [Replay a supported bet](https://proveitbro.com/verify) · [Issues](https://github.com/ProveItBro/engine/issues) · [Changelog](CHANGELOG.md) · [MIT license](LICENSE)
+[Try the tools](https://provablyhero.com/plinko) · [Replay a supported bet](https://provablyhero.com/verify) · [Issues](https://github.com/ProveItBro/engine/issues) · [Changelog](CHANGELOG.md) · [MIT license](LICENSE)
 
 The runtime has no third-party dependencies, network requests, database access or secrets. It uses Web Crypto and runs in browsers, Cloudflare Workers and Node.
 
