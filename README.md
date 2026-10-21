@@ -1,8 +1,8 @@
-# ProveItBro Engine
+# ProvablyHero Engine
 
 **Replay a revealed Plinko bet and check the mathematics behind it.** Pure TypeScript for browser-side odds, RTP, bankroll simulations and versioned provably fair adapters, used by [ProvablyHero](https://provablyhero.com).
 
-[Try the tools](https://provablyhero.com/plinko) · [Replay a supported bet](https://provablyhero.com/verify) · [Issues](https://github.com/ProveItBro/engine/issues) · [Changelog](CHANGELOG.md) · [MIT license](LICENSE)
+[Try the tools](https://provablyhero.com/plinko) · [Replay a supported bet](https://provablyhero.com/verify) · [Issues](https://github.com/ProvablyHero/engine/issues) · [Changelog](CHANGELOG.md) · [MIT license](LICENSE)
 
 The runtime has no third-party dependencies, network requests, database access or secrets. It uses Web Crypto and runs in browsers, Cloudflare Workers and Node.
 
@@ -11,7 +11,7 @@ The runtime has no third-party dependencies, network requests, database access o
 Use **Node 22.18 or newer** (native TypeScript support) and npm:
 
 ```sh
-git clone https://github.com/ProveItBro/engine.git
+git clone https://github.com/ProvablyHero/engine.git
 cd engine
 npm ci --ignore-scripts
 npm test
@@ -51,7 +51,7 @@ Seeds are used verbatim as UTF-8 strings, not hex-decoded or trimmed. Current in
 
 BC.Game supports normal **Classic** mode only; Lightning and Left/Right side bias are excluded. Its official verifier consumes four-byte fractions from one HMAC-SHA512 block for `clientSeed:nonce`, using a strict `> 0.5` right-turn threshold.
 
-Sources: [BC.Game verifier](https://github.com/bcgame-project/verify/blob/main/plinko.html), [Stake implementation](https://stake.com/provably-fair/implementation), [float conversion](https://stake.com/provably-fair/conversions), [Plinko mapping](https://stake.com/provably-fair/game-events), [BCH.games](https://bch.games) and the ProveItBro capture notes described in [vector provenance](test-vectors/README.md).
+Sources: [BC.Game verifier](https://github.com/bcgame-project/verify/blob/main/plinko.html), [Stake implementation](https://stake.com/provably-fair/implementation), [float conversion](https://stake.com/provably-fair/conversions), [Plinko mapping](https://stake.com/provably-fair/game-events), [BCH.games](https://bch.games) and the project capture notes described in [vector provenance](test-vectors/README.md).
 
 ## Exact mathematics and session estimates
 
@@ -96,4 +96,4 @@ The data project is a separate phase: versioned multiplier JSON, source captures
 
 ## Bugs and contributions
 
-Found a wrong result? [Open an issue](https://github.com/ProveItBro/engine/issues) with engine/adapter versions, expected result and a minimal reproducer using already revealed seeds. [Contribution guide](CONTRIBUTING.md) · [Sensitive reports](SECURITY.md).
+Found a wrong result? [Open an issue](https://github.com/ProvablyHero/engine/issues) with engine/adapter versions, expected result and a minimal reproducer using already revealed seeds. [Contribution guide](CONTRIBUTING.md) · [Sensitive reports](SECURITY.md).

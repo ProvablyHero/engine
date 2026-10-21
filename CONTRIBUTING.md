@@ -2,7 +2,7 @@
 
 Use Node 22.18+ and `npm ci --ignore-scripts`, then run `npm test`.
 
-Report reproducible bugs through [Issues](https://github.com/ProveItBro/engine/issues). Include the engine version, operator/adapter version, row count, expected and actual result, and an already revealed seed pair and nonce when relevant. Never share credentials, account cookies or active/unrevealed seeds.
+Report reproducible bugs through [Issues](https://github.com/ProvablyHero/engine/issues). Include the engine version, operator/adapter version, row count, expected and actual result, and an already revealed seed pair and nonce when relevant. Never share credentials, account cookies or active/unrevealed seeds.
 
 Adapters must link to operator documentation, identify the algorithm version and describe any assumptions. A new adapter starts as `reference`. Follow [test-vectors/README.md](test-vectors/README.md) before proposing `verified` status. Do not copy operator code into this repository; implement the documented algorithm and cite its source.
 

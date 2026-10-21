@@ -25,13 +25,13 @@
     "typescript": "^6.0.3"
   },
   "license": "MIT",
-  "homepage": "https://proveitbro.com",
+  "homepage": "https://provablyhero.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ProveItBro/engine.git"
+    "url": "git+https://github.com/ProvablyHero/engine.git"
   },
   "bugs": {
-    "url": "https://github.com/ProveItBro/engine/issues"
+    "url": "https://github.com/ProvablyHero/engine/issues"
   },
   "engines": {
     "node": ">=22.18.0"
