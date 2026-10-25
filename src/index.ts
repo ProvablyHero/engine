@@ -7,4 +7,4 @@ export { STAKE_PLINKO_V1, stakePlinkoPath } from "./adapters/stake/plinko-v1.ts"
 export { BC_GAME_PLINKO_V1, bcGamePlinkoPath } from "./adapters/bc-game/plinko-v1.ts";
 
 export {BCH_GAMES_DICE_V1,bchGamesDiceRoll,bchGamesDiceStats,bchGamesDiceWins,bchGamesDiceFromWord,type BchDiceMode} from "./adapters/bch-games/dice-v1.ts";
-export {BC_GAME_DICE_V1,bcGameDiceRoll,bcGameDiceFromHash} from './adapters/bc-game/dice-v1.ts';
+export {BC_GAME_DICE_V1,BC_GAME_DICE_98_V1,bcGameDiceRoll,bcGameDiceFromHash,type BcDiceVariant} from './adapters/bc-game/dice-v1.ts';

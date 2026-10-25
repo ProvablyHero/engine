@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Add explicit BC.Game Dice98 replay (10000-event scale) alongside ClassicDice98 (10001), six disclosed regression vectors and scoped pre-bet screenshot-prefix evidence. Existing Classic Dice calls keep their default variant; payout models remain separate.
+
 - Add a separate BC.Game ClassicDice98 sliding-window replay adapter. Two disclosed rounds match. Nonce 2 is backed by a matching pre-bet 48-character hash-prefix screenshot and later full disclosure, supporting Verified replay; payout formulas remain unverified.
 
 - Add BCH.games Dice v1 replay, captured payout rules and exact uint32 threshold probabilities. Three disclosed rounds match; a hash captured at zero bets before round 11807972487 supports Verified replay status. Currency settlement remains unverified. Dice stays in local preview.

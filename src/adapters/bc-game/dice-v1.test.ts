@@ -36,3 +36,23 @@ test('pre-bet prefix round 1880048288356627997 reproduces nonce 2, 35.84 and the
  assert.equal(createHmac('sha256',seed).update(client+':2').digest('hex'),'4fd8674a362eb484fe975039d777f8f45b2ab4b59b08c05bc284ba7368120a18');
  assert.deepEqual(await bcGameDiceRoll(seed,client,2),{ticks:3584,value:35.84});
 });
+
+test('Dice98 captures use 10000 events: six disclosed interval rounds, including 13.49',async()=>{
+ const seed='58cc768fe782afd394911862a3579dc7f2eb3a13802f16ce0f762948f0115ff7',client='e58d4457f15c1851581b349de5b60821';
+ assert.equal(createHash('sha256').update(seed).digest('hex'),'66a41f40ad9463e54554a3e5588e5ae4550f1635ea3ca0fc74300748505025f8');
+ for(const[nonce,ticks]of[[2,9362],[3,1197],[4,9907],[6,925],[7,3754],[9,1349]])assert.deepEqual(await bcGameDiceRoll(seed,client,nonce,'Dice98'),{ticks,value:ticks/100});
+ assert.deepEqual(bcGameDiceFromHash('f'.repeat(64),'Dice98'),{ticks:9999,value:99.99});assert.deepEqual(bcGameDiceFromHash('0'.repeat(64),'Dice98'),{ticks:0,value:0});
+});
+test('both BC.Game variants agree with independent HMAC math and unknown variants are rejected',async()=>{
+ for(let n=0;n<100;n++){const seed='dice98-'+n,h=createHmac('sha256',seed).update(client+':'+n).digest('hex'),i=Number(BigInt('0x'+h.slice(0,15))%47n),fraction=Number(BigInt('0x'+h.slice(i,i+14))/8n)/2**53;
+ for(const variant of['Dice98','ClassicDice98']as const){const ticks=Math.floor(fraction*(variant==='Dice98'?10000:10001));assert.deepEqual(await bcGameDiceRoll(seed,client,n,variant),{ticks,value:ticks/100});}}
+ assert.throws(()=>bcGameDiceFromHash('0'.repeat(64),'unknown' as never));await assert.rejects(()=>bcGameDiceRoll(server,client,0,'unknown' as never));
+});
+
+test('Dice98 preserves the published numeric parseInt conversion for tiny fractions',()=>{
+ const hash='000000000000010'+'0'+'00000000000008'+'0'.repeat(34);
+ assert.equal(hash.length,64);assert.equal(Number(BigInt('0x'+hash.slice(0,15))%47n),16);
+ const scaled=Number(BigInt('0x'+hash.slice(16,30))>>3n)*2**-53*10000;
+ assert.equal(Math.floor(scaled),0);assert.equal(Number.parseInt(String(scaled),10),1);
+ assert.deepEqual(bcGameDiceFromHash(hash,'Dice98'),{ticks:1,value:.01});
+});
