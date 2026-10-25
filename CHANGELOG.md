@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Add a Stake Dice Reference adapter from official HMAC documentation and captured fairness-client integer mapping. Synthetic examples are explicitly separate from disclosed rounds; all supplied roll requests were rejected by regional restrictions.
+
 - Add explicit BC.Game Dice98 replay (10000-event scale) alongside ClassicDice98 (10001), six disclosed regression vectors and scoped pre-bet screenshot-prefix evidence. Existing Classic Dice calls keep their default variant; payout models remain separate.
 
 - Add a separate BC.Game ClassicDice98 sliding-window replay adapter. Two disclosed rounds match. Nonce 2 is backed by a matching pre-bet 48-character hash-prefix screenshot and later full disclosure, supporting Verified replay; payout formulas remain unverified.
