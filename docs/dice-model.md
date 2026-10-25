@@ -21,3 +21,9 @@ Tests exhaustively count the winning outcomes for several thresholds in both dir
 A second captured vector, round 11807938076, reproduces 12.11 at nonce 14 and loses on Over 61.45 with an announced multiplier of 2.5428. Both Under and Over now have disclosed-round regression coverage. The second capture also records its hash after the wager, so that capture alone does not establish pre-bet commitment.
 
 Round 11807972487 completes the pre-bet commitment sequence: hash captured with zero bets before the request, matching later disclosure, nonce 3, result 77.37, Over 99.43 and announced 175x. BCH.games Dice v1 is now Verified for this replay scope. Older vectors keep their post-bet provenance. Currency settlement remains unverified; Dice is not published on the site.
+
+## BC.Game Classic Dice replay
+
+`bcGameDiceRoll` is separate from the BCH.games and illustrative profiles. It implements the HMAC-SHA256 sliding-window algorithm in the official `classicdice_new.html` and `lib/utils.js`, retaining the captured API's integer floor before scaling by 100. It has 10001 ticks, including 100.00. Legacy Classic Dice and the separate Dice product are not interchangeable. Round 1880047227552134678, nonce 15, reproduces 76.28. Its hash was captured after the wager, before disclosure, so that capture alone supports Reference. No payout, stake limits or settlement profile is inferred from this losing round.
+
+A second BC.Game round, 1880048288356627997, nonce 2, reproduces 35.84 and a reported Under 50 win at 1.96x. A pre-bet settings screenshot records the client seed, next nonce 1 and a matching 48-character hash prefix. Its filename supplies the time; the full hash is recorded only after play. The later disclosure matches both. This explicit prefix-based evidence supports Verified replay status without asserting a full pre-bet network hash, payout formula or settlement check.
