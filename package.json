@@ -8,7 +8,8 @@
     ".": "./src/index.ts",
     "./plinko": "./src/games/plinko/index.ts",
     "./sim": "./src/sim/index.ts",
-    "./input": "./src/core/input.ts"
+    "./input": "./src/core/input.ts",
+    "./dice": "./src/games/dice/index.ts"
   },
   "scripts": {
     "typecheck": "tsc -p tsconfig.json",

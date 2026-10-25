@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Add BCH.games Dice v1 replay, captured payout rules and exact uint32 threshold probabilities. Three disclosed rounds match; a hash captured at zero bets before round 11807972487 supports Verified replay status. Currency settlement remains unverified. Dice stays in local preview.
+
+- Prepare an illustrative Dice grid model, exact probability calculations, unbiased demo rolls and bounded fixed-stake simulations. No operator Dice adapter or release is included.
+
 ## [0.3.0] - 2026-10-20
 
 - Add BC.Game Classic Plinko HMAC-SHA512 adapter with four captured pre-bet-committed Classic rounds (nonces 0–3) and seven additional outcome vectors with separately documented weaker provenance. Full paths and slots match; status is verified for Classic. Lightning and Left/Right bias are unsupported.
