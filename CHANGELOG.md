@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## [0.4.0] - 2026-10-26
 
 - Add a Stake Dice Reference adapter from official HMAC documentation and captured fairness-client integer mapping. Synthetic examples are explicitly separate from disclosed rounds; all supplied roll requests were rejected by regional restrictions.
 
@@ -8,9 +8,9 @@
 
 - Add a separate BC.Game ClassicDice98 sliding-window replay adapter. Two disclosed rounds match. Nonce 2 is backed by a matching pre-bet 48-character hash-prefix screenshot and later full disclosure, supporting Verified replay; payout formulas remain unverified.
 
-- Add BCH.games Dice v1 replay, captured payout rules and exact uint32 threshold probabilities. Three disclosed rounds match; a hash captured at zero bets before round 11807972487 supports Verified replay status. Currency settlement remains unverified. Dice stays in local preview.
+- Add BCH.games Dice v1 replay, captured payout rules and exact uint32 threshold probabilities. Three disclosed rounds match; a hash captured at zero bets before round 11807972487 supports Verified replay status. Currency settlement remains unverified. Dice tools are now published on the site.
 
-- Prepare an illustrative Dice grid model, exact probability calculations, unbiased demo rolls and bounded fixed-stake simulations. Operator-specific replays are separate from the illustrative model. No tagged release or site deployment is included.
+- Prepare an illustrative Dice grid model, exact probability calculations, unbiased demo rolls and bounded fixed-stake simulations. Operator-specific replays are separate from the illustrative model. The public release exposes supported models and keeps operator payout evidence separate.
 
 ## [0.3.0] - 2026-10-20
 

@@ -1,6 +1,6 @@
 # ProvablyHero Engine
 
-**Replay a revealed Plinko bet and check the mathematics behind it.** Pure TypeScript for browser-side odds, RTP, bankroll simulations and versioned provably fair adapters, used by [ProvablyHero](https://provablyhero.com).
+**Replay a revealed Plinko or Dice bet and check the mathematics behind it.** Pure TypeScript for browser-side odds, RTP, bankroll simulations and versioned provably fair adapters, used by [ProvablyHero](https://provablyhero.com).
 
 [Try the tools](https://provablyhero.com/plinko) · [Replay a supported bet](https://provablyhero.com/verify) · [Issues](https://github.com/ProvablyHero/engine/issues) · [Changelog](CHANGELOG.md) · [MIT license](LICENSE)
 
@@ -19,7 +19,7 @@ node examples/verify-stake.ts
 node examples/verify-bch-games.ts
 ```
 
-This is a source package, not a published npm package. `private: true` prevents accidental npm publication; it does not control GitHub visibility. Browser apps can import the TypeScript source through their bundler. In a sibling checkout, use `"@proveitbro/engine": "file:../engine"` and import `@proveitbro/engine`, `@proveitbro/engine/plinko` or `@proveitbro/engine/sim`.
+This is a source package, not a published npm package. `private: true` prevents accidental npm publication; it does not control GitHub visibility. Browser apps can import the TypeScript source through their bundler. In a sibling checkout, use `"@proveitbro/engine": "file:../engine"` and import `@proveitbro/engine`, `@proveitbro/engine/plinko` or `@proveitbro/engine/sim` or `@proveitbro/engine/dice`.
 
 ## Replay Stake Plinko in five lines
 
@@ -46,10 +46,14 @@ Seeds are used verbatim as UTF-8 strings, not hex-decoded or trimmed. Current in
 | BCH.games Plinko, 8–16 rows | `bch-games-plinko-v1` | **verified** | Eight disclosed rounds; commitment, full-path and slot checks |
 | BC.Game Classic Plinko, 8–16 rows | `bc-game-plinko-v1` | **verified** | Four disclosed Classic rounds with a recorded pre-bet hash, full paths and slots; seven additional replays |
 | Stake Plinko, 8–16 rows | `stake-plinko-v1` | **reference** | Official scheme, four synthetic vectors, three community-reported historical paths (2018), independent Node crypto oracle |
+| BCH.games Dice | `bch-games-dice-v1` | **verified** | Three disclosed results; one complete pre-bet hash/disclosure sequence; captured payout rules |
+| BC.Game ClassicDice98 | `bc-game-dice-v1` | **verified** | Two disclosed results; pre-bet 48-character hash-prefix screenshot and later disclosure |
+| BC.Game Dice98 | `bc-game-dice98-v1` | **verified** | Six disclosed results; pre-bet hash/client-prefix screenshot with clipping and filename-time provenance documented |
+| Stake Dice | `stake-dice-v1` | **reference** | Official HMAC documentation, captured fairness code and synthetic examples; no disclosed Dice round |
 
 `verified` means replay agreement with the captured disclosed rounds for the named adapter version. `reference` means an implementation of the documented algorithm without those independent real-round checks. Neither is a casino endorsement or a claim about future wins. Operator status on the website also depends on its separately reviewed data; adding an engine adapter does not automatically list an operator there.
 
-BC.Game supports normal **Classic** mode only; Lightning and Left/Right side bias are excluded. Its official verifier consumes four-byte fractions from one HMAC-SHA512 block for `clientSeed:nonce`, using a strict `> 0.5` right-turn threshold.
+BC.Game Plinko supports normal **Classic** mode only; Lightning and Left/Right side bias are excluded. Its official verifier consumes four-byte fractions from one HMAC-SHA512 block for `clientSeed:nonce`, using a strict `> 0.5` right-turn threshold.
 
 Sources: [BC.Game verifier](https://github.com/bcgame-project/verify/blob/main/plinko.html), [Stake implementation](https://stake.com/provably-fair/implementation), [float conversion](https://stake.com/provably-fair/conversions), [Plinko mapping](https://stake.com/provably-fair/game-events), [BCH.games](https://bch.games) and the project capture notes described in [vector provenance](test-vectors/README.md).
 
@@ -97,3 +101,7 @@ The data project is a separate phase: versioned multiplier JSON, source captures
 ## Bugs and contributions
 
 Found a wrong result? [Open an issue](https://github.com/ProvablyHero/engine/issues) with engine/adapter versions, expected result and a minimal reproducer using already revealed seeds. [Contribution guide](CONTRIBUTING.md) · [Sensitive reports](SECURITY.md).
+
+## Dice tools and evidence scope
+
+[Dice tools](https://provablyhero.com/dice) include a demo, calculator and fixed-stake simulator. The illustrative model and captured BCH.games payout profile are separate. BC.Game replays explicitly select `Dice98` or `ClassicDice98`; their HMAC sliding-window conversion differs from Stake and BCH.games. Stake Dice uses a 10001-event grid and stays Reference. Operator payout formulas, server settlement and full replay evidence are separate checks. See [Dice model documentation](docs/dice-model.md) for model bounds and capture limitations.

@@ -1,3 +1,5 @@
+Public release: engine v0.4.0, 2026-10-26. Dice tool pages and supported verifiers are now live. Capture chronology and earlier preparation notes below describe the evidence gathered before launch.
+
 # Dice illustrative model (unreleased)
 
 Import from `@proveitbro/engine/dice`. This preparation is not an operator implementation and is not part of a tagged engine release yet.
