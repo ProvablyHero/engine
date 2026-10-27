@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.0] - 2026-10-27
+
+- Add Duel.com Plinko and Dice replay adapters using hex-decoded seed bytes for SHA-256 commitments and HMAC keys.
+- Match eleven captured Plinko slots and thirteen Dice outcomes after full pre-bet commitments and later seed disclosures. Paths are computed; stake-tier payouts, cashback and currency settlement are outside replay scope.
+- Add bounded Dice rejection sampling, explicit exhaustion behavior and boundary regression tests.
+
 ## [0.4.0] - 2026-10-26
 
 - Add a Stake Dice Reference adapter from official HMAC documentation and captured fairness-client integer mapping. Synthetic examples are explicitly separate from disclosed rounds; all supplied roll requests were rejected by regional restrictions.

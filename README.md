@@ -50,6 +50,8 @@ Seeds are used verbatim as UTF-8 strings, not hex-decoded or trimmed. Current in
 | BC.Game ClassicDice98 | `bc-game-dice-v1` | **verified** | Two disclosed results; pre-bet 48-character hash-prefix screenshot and later disclosure |
 | BC.Game Dice98 | `bc-game-dice98-v1` | **verified** | Six disclosed results; pre-bet hash/client-prefix screenshot with clipping and filename-time provenance documented |
 | Stake Dice | `stake-dice-v1` | **reference** | Official HMAC documentation, captured fairness code and synthetic examples; no disclosed Dice round |
+| Duel.com Dice, 0.00–100.00 | `duel-dice-v1` | **verified** | Thirteen captured results, full pre-bet commitment and later disclosure. Result replay only; payout tiers and settlement are separate. |
+| Duel.com Plinko, 8–16 rows | `duel-plinko-v1` | **verified** | Eleven captured slots; full pre-request byte-seed commitment and later disclosure. Computed paths are not observed API paths. |
 
 `verified` means replay agreement with the captured disclosed rounds for the named adapter version. `reference` means an implementation of the documented algorithm without those independent real-round checks. Neither is a casino endorsement or a claim about future wins. Operator status on the website also depends on its separately reviewed data; adding an engine adapter does not automatically list an operator there.
 
@@ -89,7 +91,7 @@ npm run security:audit  # lockfile dependency audit; needs network access
 
 ```text
 src/core/         Web Crypto, byte-to-float stream, input limits, PRNG and engine version
-src/adapters/     Versioned BCH.games and Stake Plinko replay
+src/adapters/     Versioned operator-specific Plinko and Dice replay
 src/games/plinko/ Exact distribution, RTP, statistics and demo settlement
 src/sim/          Bounded session simulations and convergence
 test-vectors/    Disclosed-round and explicitly synthetic fixtures
