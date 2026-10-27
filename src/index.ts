@@ -13,3 +13,5 @@ export {DUEL_PLINKO_V1,duelPlinkoPath,duelPlinkoReplay,type DuelPlinkoStep} from
 export {duelServerSeedHash} from './adapters/duel/seed.ts';
 
 export {DUEL_DICE_V1,DUEL_DICE_MAX_FAIR,duelDiceRoll,duelDiceFromHash} from "./adapters/duel/dice-v1.ts";
+
+export {DUELBITS_DICE_V1,DUELBITS_PLINKO_V1,duelbitsDiceRoll,duelbitsPlinkoTicket,duelbitsTicketFromHash} from "./adapters/duelbits/v1.ts";

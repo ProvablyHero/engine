@@ -50,6 +50,8 @@ Seeds are used verbatim as UTF-8 strings, not hex-decoded or trimmed. Current in
 | BC.Game ClassicDice98 | `bc-game-dice-v1` | **verified** | Two disclosed results; pre-bet 48-character hash-prefix screenshot and later disclosure |
 | BC.Game Dice98 | `bc-game-dice98-v1` | **verified** | Six disclosed results; pre-bet hash/client-prefix screenshot with clipping and filename-time provenance documented |
 | Stake Dice | `stake-dice-v1` | **reference** | Official HMAC documentation, captured fairness code and synthetic examples; no disclosed Dice round |
+| Duelbits Dice | `duelbits-dice-v1` | **reference** | Published SHA-256 ticket algorithm; no disclosed captured rounds. |
+| Duelbits Plinko ticket | `duelbits-plinko-v1` | **reference** | Published ticket only; current v2 path, slot and payouts are not replayed. |
 | Duel.com Dice, 0.00–100.00 | `duel-dice-v1` | **verified** | Thirteen captured results, full pre-bet commitment and later disclosure. Result replay only; payout tiers and settlement are separate. |
 | Duel.com Plinko, 8–16 rows | `duel-plinko-v1` | **verified** | Eleven captured slots; full pre-request byte-seed commitment and later disclosure. Computed paths are not observed API paths. |
 

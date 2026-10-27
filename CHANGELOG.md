@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.6.0] - 2026-10-27
+
+- Add Duelbits Dice and Plinko published SHA-256 ticket reference adapters. No disclosed captured seeds are available; neither adapter is Verified. Plinko v2 path, slot and payout mapping are outside this ticket-only implementation.
+- Preserve the published modulo mappings, exact seed/client text and bounded nonce inputs, with independent SHA-256 regression tests.
+
 ## [0.5.0] - 2026-10-27
 
 - Add Duel.com Plinko and Dice replay adapters using hex-decoded seed bytes for SHA-256 commitments and HMAC keys.
