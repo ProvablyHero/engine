@@ -39,3 +39,13 @@ Dice98 preserves the published JavaScript `parseInt(number)` conversion, includi
 ## Stake Dice Reference
 
 Stake uses HMAC-SHA256(serverSeed, clientSeed:nonce:0), first four bytes, and a 10001-event grid. Official game-events documentation shows the raw float expression; captured fairness code confirms Math.floor(float*10001)/100. This is separate from BC.Game sliding-window HMAC extraction and BCH.games' 10000 scale. All 24 roll requests in the supplied Stake HAR returned data:null with locationDiscontinuedBanned; the active seed was still hashed. No real disclosed-round vector is invented. The adapter is Reference; synthetic examples test implementation only. Nominal 1% client payout arithmetic is documented separately, without a certified server payout, exact RTP or settlement profile.
+
+## Multi-operator calculation models (2026-10-28, working tree)
+
+The dice entry point now exports DICE_PROFILES, diceProfile, diceIntervals and diceWinsForRules. Demo and simulation must use the profile-aware win predicate; the old diceWins wrapper remains the illustrative 10,000-value API. diceStats additionally returns maxRoll and half-open winning intervals. Existing illustrative and checked BCH arithmetic remain unchanged.
+
+BC.Game Dice98 and Classic, Stake, Duel base-tier and Duelbits calculation models are available. These do not promote payout verification: BC models are nominal 98% estimates (Dice98 rounds down to four decimals; Classic uses nominal percentage payout), Duel is a 0.1% base-tier estimate calibrated to the captured Over 50.05 / 2.0002x example, Stake uses captured client arithmetic/display rounding, and Duelbits uses its announced multiplier formula with assumed half-open interval boundaries. See each DICE_PROFILES.scope before presenting results. BC statistical draws use a uniform grid approximation rather than the sliding-window hash/parseInt replay algorithm.
+
+Inside/outside are supported for BC Dice98 and Duelbits; Duelbits also supports two disjoint winning intervals. start is an integer hundredth, not a percentage chance. Each interval is [lo,hi), so hi is excluded. For outside, start locates the excluded gap. Pairs split chanceBps between two intervals with a gap of floor((gridSize-chanceBps)/3). Only recorded non-boundary Duelbits observations support these conventions; exact operator boundary settlement is not established.
+
+Stake probability counts exact uint32 preimages on the 10,001 grid. Duelbits counts modulo-biased uint32 preimages. Duel rejection sampling yields a uniform 10,001 grid conditional on acceptance. Calculations assume funded wagers; currency rounding, bonuses, cashback, server settlement and higher Duel stake tiers remain outside scope.
