@@ -26,7 +26,7 @@ test("our adapter reproduces BCH.games' reference code exactly (2,000 random rou
   }
 });
 
-test("the ProveItBro demo generator is the same scheme, so demo drops verify the same way", async () => {
+test("the ProvablyHero demo generator is the same scheme, so demo drops verify the same way", async () => {
   for (let nonce = 0; nonce < 200; nonce++) {
     assert.deepEqual((await demoDrop("s", "c", nonce, 16)).path, (await bchGamesPlinkoPath("s", "c", nonce, 16)).path);
   }

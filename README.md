@@ -19,7 +19,7 @@ node examples/verify-stake.ts
 node examples/verify-bch-games.ts
 ```
 
-This is a source package, not a published npm package. `private: true` prevents accidental npm publication; it does not control GitHub visibility. Browser apps can import the TypeScript source through their bundler. In a sibling checkout, use `"@proveitbro/engine": "file:../engine"` and import `@proveitbro/engine`, `@proveitbro/engine/plinko` or `@proveitbro/engine/sim` or `@proveitbro/engine/dice`.
+This is a source package, not a published npm package. `private: true` prevents accidental npm publication; it does not control GitHub visibility. Browser apps can import the TypeScript source through their bundler. In a sibling checkout, use `"@provablyhero/engine": "file:../engine"` and import `@provablyhero/engine`, `@provablyhero/engine/plinko` or `@provablyhero/engine/sim` or `@provablyhero/engine/dice`.
 
 ## Replay Stake Plinko in five lines
 

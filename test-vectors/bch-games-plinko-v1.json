@@ -2,7 +2,7 @@
   "adapter": "bch-games-plinko-v1",
   "kind": "disclosed-rounds",
   "capturedAt": "2026-10-18",
-  "provenance": "ProveItBro account; commitments recorded before play; seeds disclosed after rotation. See test-vectors/README.md.",
+  "provenance": "ProvablyHero account; commitments recorded before play; seeds disclosed after rotation. See test-vectors/README.md.",
   "vectors": [
     {
       "serverSeed": "3ae1ba166e436cbcbee50b0d57a7bb1f2c9e74d2c509e602a6132ef8ddff8f63",

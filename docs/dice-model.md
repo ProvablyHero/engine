@@ -2,7 +2,7 @@ Public release: engine v0.4.0, 2026-10-26. Dice tool pages and supported verifie
 
 # Dice illustrative model (unreleased)
 
-Import from `@proveitbro/engine/dice`. This preparation is not an operator implementation and is not part of a tagged engine release yet.
+Import from `@provablyhero/engine/dice`. This preparation is not an operator implementation and is not part of a tagged engine release yet.
 
 - There are 10,000 uniform integer outcomes, `0..9999`, displayed by dividing by 100.
 - `chanceBps` is a winning-outcome count, from 1 to 9999. Under wins at `roll < chanceBps`; Over wins at `roll > 9999-chanceBps`. Equality loses. Do not transfer these endpoints to an operator without checking its rules.

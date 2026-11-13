@@ -2,7 +2,7 @@ import { sha256Hex } from "../../core/crypto.ts";
 import { floats } from "../../core/floats.ts";
 
 /**
- * The ProveItBro demo generator: our own provably fair scheme, used by the
+ * The ProvablyHero demo generator: our own provably fair scheme, used by the
  * demo for every table. It is NOT an operator's algorithm (those are adapters,
  * TZ 9.1); the demo says so next to the board.
  *

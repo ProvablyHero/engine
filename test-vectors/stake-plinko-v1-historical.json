@@ -5,7 +5,7 @@
   "publishedAt": "2018-10-09",
   "checkedAt": "2026-10-20",
   "limitations": [
-    "User-reported rounds, not independently captured by ProveItBro.",
+    "User-reported rounds, not independently captured by ProvablyHero.",
     "No pre-bet server seed commitment is available; commitment verification is not possible.",
     "Only paths and slots are regression-tested; payouts and current Stake behavior are not verified."
   ],
