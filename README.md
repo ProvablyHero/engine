@@ -2,7 +2,7 @@
 
 **Replay a revealed Plinko or Dice bet and check the mathematics behind it.** Pure TypeScript for browser-side odds, RTP, bankroll simulations and versioned provably fair adapters, used by [ProvablyHero](https://provablyhero.com).
 
-[Try the tools](https://provablyhero.com/plinko) · [Replay a supported bet](https://provablyhero.com/verify) · [Issues](https://github.com/ProvablyHero/engine/issues) · [Changelog](CHANGELOG.md) · [MIT license](LICENSE)
+[Try the tools](https://provablyhero.com/plinko) · [Replay a supported bet](https://provablyhero.com/verify) · [Adapter status](https://provablyhero.com/status) · [Issues](https://github.com/ProvablyHero/engine/issues) · [Changelog](CHANGELOG.md) · [MIT license](LICENSE)
 
 The runtime has no third-party dependencies, network requests, database access or secrets. It uses Web Crypto and runs in browsers, Cloudflare Workers and Node.
 
@@ -40,6 +40,16 @@ A matching path/slot and server-seed commitment are specific checks. They do not
 Seeds are used verbatim as UTF-8 strings, not hex-decoded or trimmed. Current input policies accept `A–Z`, `a–z`, digits, `.`, `_`, `:` and `-`, with server seeds up to 256 characters and client seeds up to 128. Seeds outside this supported subset are rejected; a rejected seed is not evidence of an unfair bet. Nonces must be nonnegative safe integers.
 
 ## Supported adapters
+
+| Platform | Plinko | Dice | Limbo | Mines | Crash |
+| --- | --- | --- | --- | --- | --- |
+| BC.Game | ✓ Verified | ✓ Verified | — | — | — |
+| BCH.games | ✓ Verified | ✓ Verified | — | — | — |
+| Duel.com | ✓ Verified | ✓ Verified | — | — | — |
+| Duelbits | ◐ Reference | ◐ Reference | — | — | — |
+| Stake | ◐ Reference | ◐ Reference | — | — | — |
+
+Live status, evidence and the date each adapter was last checked: [provablyhero.com/status](https://provablyhero.com/status). Every change is listed in the [site changelog](https://provablyhero.com/changelog).
 
 | Operator / game | Adapter | Status | Evidence in this repository |
 | --- | --- | --- | --- |
